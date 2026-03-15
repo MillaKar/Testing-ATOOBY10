@@ -1,0 +1,25 @@
+{
+  "name": "atooby10-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MillaKar/Testing-ATOOBY10.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MillaKar/Testing-ATOOBY10/issues"
+  },
+  "homepage": "https://github.com/MillaKar/Testing-ATOOBY10#readme",
+  "devDependencies": {
+    "coveralls": "^3.1.1",
+    "jest": "^30.3.0",
+    "nyc": "^18.0.0"
+  }
+}
