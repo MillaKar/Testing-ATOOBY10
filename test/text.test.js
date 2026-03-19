@@ -1,4 +1,5 @@
 // test/text.test.js
+// Tests string fucntions
 import camelCase from "../src/camelCase.js";
 import capitalize from "../src/capitalize.js";
 import endsWith from "../src/endsWith.js";
@@ -10,17 +11,17 @@ describe("String functions", () => {
     //camelCase
     describe("camelCase", () => {
         test("simple words", () => {
-            expect(camelCase("Foo Bar")).toBe("fooBar");
-            expect(camelCase("--foo-bar--")).toBe("fooBar");
-            expect(camelCase("__FOO_BAR__")).toBe("fooBar");
+            expect(camelCase("Moi Hei")).toBe("moiHei");
+            expect(camelCase("--moi-hei--")).toBe("moiHei");
+            expect(camelCase("__MOI_HEI__")).toBe("moiHei");
         });
     });
 
     //Capitalize
     describe("capitalize", () => {
         test("basic capitalization", () => {
-            expect(capitalize("FRED")).toBe("Fred");
-            expect(capitalize("barney")).toBe("Barney");
+            expect(capitalize("MOI")).toBe("Moi");
+            expect(capitalize("moi")).toBe("Moi");
         });
     });
 
@@ -32,43 +33,43 @@ describe("String functions", () => {
             expect(endsWith("abc", "b", 2)).toBe(true);
         });
         test("target longer than string", () => {
-            expect(endsWith("a", "abc")).toBe(false); // rivi 30: position < 0
+            expect(endsWith("a", "abc")).toBe(false);
         });
 
         test("position = 0", () => {
-            expect(endsWith("abc", "a", 0)).toBe(false); // rivi 27: end = 0
+            expect(endsWith("abc", "a", 0)).toBe(false);
         });
 
         test("position = string length", () => {
-            expect(endsWith("abc", "c", 3)).toBe(true); // normaali tapaus
+            expect(endsWith("abc", "c", 3)).toBe(true);
         });
     });
 
     //upperFirst
     describe("upperFirst", () => {
         test("only first character uppercase", () => {
-            expect(upperFirst("fred")).toBe("Fred");
-            expect(upperFirst("FRED")).toBe("FRED"); // voi palauttaa alkuperäisen
+            expect(upperFirst("milla")).toBe("Milla");
+            expect(upperFirst("MILLA")).toBe("MILLA");
         });
     });
 
     //Words
     describe("words", () => {
         test("splits ascii words", () => {
-            expect(words("fred, barney, & pebbles")).toEqual(["fred", "barney", "pebbles"]);
-            expect(words("fred, barney, & pebbles", /[^, ]+/g)).toEqual(["fred", "barney", "&", "pebbles"]);
+            expect(words("moi, heippa, & hyvasti")).toEqual(["moi", "heippa", "hyvasti"]);
+            expect(words("moi, heippa, & hyvasti", /[^, ]+/g)).toEqual(["moi", "heippa", "&", "hyvasti"]);
         });
         test("pattern matches nothing", () => {
-            expect(words("abc", /[0-9]+/g)).toEqual([]);  // ei yhtään numeroa
+            expect(words("abc", /[0-9]+/g)).toEqual([]);
         });
 
         test("pattern matches something", () => {
-            expect(words("abc 123 def", /\d+/g)).toEqual(["123"]);  // löytää numeron
+            expect(words("abc 123 def", /\d+/g)).toEqual(["123"]);
         });
         test("unicode string triggers unicodeWords branch", () => {
-            const str = "déjà vu"; // sisältää unicode-merkin é
+            const str = "déjà vu";
             const result = words(str);
-            expect(result).toEqual(["déjà", "vu"]); // unicodeWords pitäisi palauttaa nämä
+            expect(result).toEqual(["déjà", "vu"]);
         });
     });
 

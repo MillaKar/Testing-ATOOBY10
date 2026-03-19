@@ -1,4 +1,5 @@
 // test/lang.test.js
+//Testing different types and for example arrays
 import isArguments from "../src/isArguments.js";
 import isArrayLike from "../src/isArrayLike.js";
 import isArrayLikeObject from "../src/isArrayLikeObject.js";
@@ -13,7 +14,6 @@ import isSymbol from "../src/isSymbol.js";
 import isTypedArray from "../src/isTypedArray.js";
 
 describe("Lang type-check functions", () => {
-
 
     // isArguments
     describe("isArguments", () => {
@@ -69,13 +69,13 @@ describe("Lang type-check functions", () => {
     describe("isDate", () => {
         test("date objects", () => {
             expect(isDate(new Date())).toBe(true);
-            expect(isDate(Date())).toBe(false); // string, not date object
+            expect(isDate(Date())).toBe(false);
         });
         test("real Date objects (covers line 25)", () => {
             const d = new Date();
-            expect(isDate(d)).toBe(true);         // normaalitapauksessa nodeIsDate
-            expect(isDate({})).toBe(false);       // pakottaa rivin 25 else-haaran käyttöön
-            expect(isDate("2023-01-01")).toBe(false); // string, ei Date-objekti
+            expect(isDate(d)).toBe(true);
+            expect(isDate({})).toBe(false);
+            expect(isDate("2023-01-01")).toBe(false);
         });
     });
 
@@ -128,9 +128,9 @@ describe("Lang type-check functions", () => {
             expect(isSymbol("abc")).toBe(false);
         });
         test("symbol values (covers line 20)", () => {
-            expect(isSymbol(Symbol())).toBe(true);          // tyyppi 'symbol', rivi 20 suoritetaan
-            expect(isSymbol(Object(Symbol()))).toBe(true);  // pakottaa else-haaran
-            expect(isSymbol("abc")).toBe(false);            // ei symbol
+            expect(isSymbol(Symbol())).toBe(true);
+            expect(isSymbol(Object(Symbol()))).toBe(true);
+            expect(isSymbol("abc")).toBe(false);
         });
     });
 
@@ -141,9 +141,9 @@ describe("Lang type-check functions", () => {
             expect(isTypedArray([])).toBe(false);
         });
         test("typed arrays (covers line 28)", () => {
-            expect(isTypedArray(new Uint8Array())).toBe(true); // testaa reTypedTag regexin
-            expect(isTypedArray(new Int32Array())).toBe(true); // eri tyyppi
-            expect(isTypedArray([])).toBe(false);              // pakottaa else-haaran riville 28
+            expect(isTypedArray(new Uint8Array())).toBe(true);
+            expect(isTypedArray(new Int32Array())).toBe(true);
+            expect(isTypedArray([])).toBe(false);
             expect(isTypedArray({})).toBe(false);
         });
     });

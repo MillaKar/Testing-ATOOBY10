@@ -76,7 +76,7 @@ describe("Conversion functions", () => {
     describe("toString", () => {
         test("basic values", () => {
             expect(toString(123)).toBe("123");
-            expect(toString(null)).toBe("null"); // HUOM: tämä voi olla bugi vs dokumentaatio
+            expect(toString(null)).toBe("null");
         });
 
         test("array conversion", () => {

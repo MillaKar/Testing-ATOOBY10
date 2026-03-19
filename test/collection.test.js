@@ -46,7 +46,7 @@ describe("Collection & Object functions", () => {
 
             expect(fn(2)).toBe(4);
             expect(fn(2)).toBe(4);
-            expect(count).toBe(1); // should only run once
+            expect(count).toBe(1);
         });
 
         test("resolver function", () => {
@@ -56,7 +56,7 @@ describe("Collection & Object functions", () => {
             );
 
             expect(fn(1, 2)).toBe(3);
-            expect(fn(1, 2)).toBe(3); // cached
+            expect(fn(1, 2)).toBe(3);
         });
 
         test("throws if func not function", () => {
