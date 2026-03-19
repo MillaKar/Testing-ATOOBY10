@@ -1,7 +1,9 @@
+//math.test.js
 import divide from "../src/divide.js";
 import add from "../src/add.js";
 import ceil from "../src/ceil.js";
 
+//Divide
 describe("divide function", () => {
     test("6 / 3 = 2", () => {
         expect(divide(6, 3)).toBe(2);
@@ -12,6 +14,7 @@ describe("divide function", () => {
     });
 });
 
+//Add
 describe("add function", () => {
     test("2 + 3 = 5", () => {
         expect(add(2, 3)).toBe(5);
@@ -22,6 +25,7 @@ describe("add function", () => {
     });
 });
 
+//Ceil
 describe("ceil function", () => {
 
     test("ceil without precision rounds up to nearest integer", () => {

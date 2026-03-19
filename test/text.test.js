@@ -7,6 +7,7 @@ import words from "../src/words.js";
 
 describe("String functions", () => {
 
+    //camelCase
     describe("camelCase", () => {
         test("simple words", () => {
             expect(camelCase("Foo Bar")).toBe("fooBar");
@@ -15,6 +16,7 @@ describe("String functions", () => {
         });
     });
 
+    //Capitalize
     describe("capitalize", () => {
         test("basic capitalization", () => {
             expect(capitalize("FRED")).toBe("Fred");
@@ -22,6 +24,7 @@ describe("String functions", () => {
         });
     });
 
+    //EndsWith
     describe("endsWith", () => {
         test("basic endsWith behavior", () => {
             expect(endsWith("abc", "c")).toBe(true);
@@ -41,6 +44,7 @@ describe("String functions", () => {
         });
     });
 
+    //upperFirst
     describe("upperFirst", () => {
         test("only first character uppercase", () => {
             expect(upperFirst("fred")).toBe("Fred");
@@ -48,6 +52,7 @@ describe("String functions", () => {
         });
     });
 
+    //Words
     describe("words", () => {
         test("splits ascii words", () => {
             expect(words("fred, barney, & pebbles")).toEqual(["fred", "barney", "pebbles"]);

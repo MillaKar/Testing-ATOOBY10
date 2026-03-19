@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "coverage": "nyc npm test",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "jest --coverage",
+    "coveralls": "cat coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
     "@babel/preset-env": "^7.29.0",
     "babel-jest": "^30.3.0",
     "coveralls": "^3.1.1",
-    "jest": "^30.3.0",
-    "nyc": "^18.0.0"
+    "jest": "^30.3.0"
   }
 }

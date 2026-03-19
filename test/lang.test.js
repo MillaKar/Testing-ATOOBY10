@@ -14,9 +14,8 @@ import isTypedArray from "../src/isTypedArray.js";
 
 describe("Lang type-check functions", () => {
 
-    // -----------------------
+
     // isArguments
-    // -----------------------
     describe("isArguments", () => {
         test("detects arguments object", () => {
             function testFn() { return isArguments(arguments); }
@@ -27,9 +26,8 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
+
     // isArrayLike
-    // -----------------------
     describe("isArrayLike", () => {
         test("array-like values", () => {
             expect(isArrayLike([1, 2, 3])).toBe(true);
@@ -39,9 +37,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isArrayLikeObject
-    // -----------------------
     describe("isArrayLikeObject", () => {
         test("array-like objects", () => {
             expect(isArrayLikeObject([1, 2, 3])).toBe(true);
@@ -50,9 +46,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isBoolean
-    // -----------------------
     describe("isBoolean", () => {
         test("boolean primitives and objects", () => {
             expect(isBoolean(true)).toBe(true);
@@ -62,9 +56,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isBuffer
-    // -----------------------
     describe("isBuffer", () => {
         test("buffers", () => {
             const buf = typeof Buffer !== 'undefined' ? Buffer.from([1, 2]) : null;
@@ -73,9 +65,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isDate
-    // -----------------------
     describe("isDate", () => {
         test("date objects", () => {
             expect(isDate(new Date())).toBe(true);
@@ -89,9 +79,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isEmpty
-    // -----------------------
     describe("isEmpty", () => {
         test("empty values", () => {
             expect(isEmpty(null)).toBe(true);
@@ -102,9 +90,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isLength
-    // -----------------------
     describe("isLength", () => {
         test("valid lengths", () => {
             expect(isLength(0)).toBe(true);
@@ -115,9 +101,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isObject
-    // -----------------------
     describe("isObject", () => {
         test("objects and functions", () => {
             expect(isObject({})).toBe(true);
@@ -127,9 +111,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isObjectLike
-    // -----------------------
     describe("isObjectLike", () => {
         test("object-like values", () => {
             expect(isObjectLike({})).toBe(true);
@@ -139,9 +121,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isSymbol
-    // -----------------------
     describe("isSymbol", () => {
         test("symbol values", () => {
             expect(isSymbol(Symbol())).toBe(true);
@@ -154,9 +134,7 @@ describe("Lang type-check functions", () => {
         });
     });
 
-    // -----------------------
     // isTypedArray
-    // -----------------------
     describe("isTypedArray", () => {
         test("typed arrays", () => {
             expect(isTypedArray(new Uint8Array(2))).toBe(true);
